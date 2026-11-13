@@ -38,7 +38,8 @@ madam is a palindrome
 
 ## What's next
 
-- Linked lists, stacks and queues in C
+- Object-oriented programming in Java (Semester II)
+- Linked lists, stacks and queues
 - Data structures & algorithms practice
 
 ## Author
