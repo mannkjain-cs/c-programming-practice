@@ -1,25 +1,25 @@
 # C Programming Practice
 
 ![Language](https://img.shields.io/badge/language-C-00599C?logo=c&logoColor=white)
-![Programs](https://img.shields.io/badge/programs-20-brightgreen)
+![Programs](https://img.shields.io/badge/programs-34-brightgreen)
 
-My C programming practice from the first year of **B.Tech Computer Science Engineering (Data Science)**, organised topic by topic from the basics up to pointers, structures and file handling.
+My C programming practice from the first year of **B.Tech Computer Science Engineering (Data Science)**, following the units of my Computational Thinking for Problem Solving (CTPS) course, from the basics up to pointers, structures and file handling.
 
-Every program validates its input and compiles cleanly with `gcc -Wall -Wextra`.
+All programs take input from the user, use function prototypes above `main()`, and compile cleanly with `gcc -Wall -Wextra`.
 
 ## Programs
 
-| Topic | Programs | Concepts practised |
-|---|---|---|
-| [basics](basics/) | Hello World, user input, arithmetic operations | `printf`, `scanf`, data types, operators |
-| [conditionals](conditionals/) | Even/odd, grade calculator, simple calculator | `if`/`else if`, `switch`, input validation |
-| [loops](loops/) | Multiplication table, Fibonacci series, prime check | `for`, `break`, √n optimisation |
-| [functions](functions/) | Recursive factorial, GCD & LCM | recursion, Euclid's algorithm, overflow-safe maths |
-| [arrays](arrays/) | Array statistics, bubble sort, binary search | traversal, sorting with early exit, O(log n) search |
-| [strings](strings/) | Palindrome checker, vowel/consonant counter | `fgets`, `<ctype.h>`, two-pointer technique |
-| [pointers](pointers/) | Swap using pointers, dynamic array | pass-by-reference, `malloc`/`free`, pointer arithmetic |
-| [structures](structures/) | Student records | `struct`, arrays of structs, formatted tables |
-| [file-handling](file-handling/) | Notes app | `fopen`, `fgets`/`fputs`, append vs read modes, menus |
+| Unit | Topic | Programs | Concepts practised |
+|---|---|---|---|
+| 1 | [basics](basics/) | Hello World, user input, arithmetic operations, type conversion, swapping | `printf`/`scanf`, operators, integer division, type casting, `x++` vs `++x` |
+| 2 | [conditionals](conditionals/) | Even/odd, grade calculator, menu calculator, leap year | `if`/`else if` ladder, `switch` menus, logical operators |
+| 2 | [loops](loops/) | Multiplication table, Fibonacci, prime check, reverse & palindrome number, star patterns | `for`/`while`, nested loops, `break`, digit extraction with `%` and `/` |
+| 3 | [arrays](arrays/) | Array statistics, bubble sort, linear & binary search, insert element, matrix operations | 1D and 2D arrays, sorting, searching, shifting elements, row/column sums, identity check |
+| 3 | [strings](strings/) | Palindrome string, vowel/consonant counter, string operations | length, copy, concatenate, reverse and toggle case **without** `<string.h>` |
+| 4 | [functions](functions/) | Recursive factorial, GCD & LCM, primes & perfect numbers in a range, °C→°F and array average, macro vs inline | prototypes, call by value, passing arrays, recursion, `#define` vs `inline` |
+| 5 | [pointers](pointers/) | Call by value vs address, pointer arithmetic, `custom_strlen()` | `&` and `*`, `*(p + i)`, walking a string with a pointer |
+| 5 | [structures](structures/) | Student records, structure pointer | arrays of structures, `->` operator, passing structs to functions |
+| 6 | [file-handling](file-handling/) | Text file write/append/read, binary file records | `fopen` modes, `fprintf`/`fgets`, `fwrite`/`fread`, searching a file |
 
 ## How to run
 
@@ -31,9 +31,9 @@ gcc -Wall -Wextra -o program loops/prime_check.c
 ## Example
 
 ```text
-$ ./palindrome
-Enter a word or sentence: Never odd or even
-"Never odd or even" is a palindrome.
+$ ./palindrome_string
+Enter a string: madam
+madam is a palindrome
 ```
 
 ## What's next

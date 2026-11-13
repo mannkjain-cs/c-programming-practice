@@ -1,36 +1,34 @@
+// Count vowels, consonants, digits and spaces in a string
 #include <stdio.h>
-#include <string.h>
-#include <ctype.h>
 
 int main()
 {
-    char text[200];
-    int vowels = 0, consonants = 0, digits = 0, spaces = 0;
+    char str[100], ch;
+    int i, v = 0, c = 0, d = 0, s = 0;
 
-    printf("Enter a line of text: ");
-    if (fgets(text, sizeof(text), stdin) == NULL)
-        return 1;
+    printf("Enter a string: ");
+    scanf(" %[^\n]", str);      // reads the whole line, including spaces
 
-    text[strcspn(text, "\n")] = '\0';
-
-    for (int i = 0; text[i] != '\0'; i++)
+    for (i = 0; str[i] != '\0'; i++)
     {
-        char c = (char)tolower((unsigned char)text[i]);
+        ch = str[i];
+        if (ch >= 'A' && ch <= 'Z')     // uppercase to lowercase
+            ch = ch + 32;
 
-        if (strchr("aeiou", c) && c != '\0')
-            vowels++;
-        else if (isalpha((unsigned char)c))
-            consonants++;
-        else if (isdigit((unsigned char)c))
-            digits++;
-        else if (c == ' ')
-            spaces++;
+        if (ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u')
+            v++;
+        else if (ch >= 'a' && ch <= 'z')
+            c++;
+        else if (ch >= '0' && ch <= '9')
+            d++;
+        else if (ch == ' ')
+            s++;
     }
 
-    printf("Vowels:     %d\n", vowels);
-    printf("Consonants: %d\n", consonants);
-    printf("Digits:     %d\n", digits);
-    printf("Spaces:     %d\n", spaces);
+    printf("Vowels = %d\n", v);
+    printf("Consonants = %d\n", c);
+    printf("Digits = %d\n", d);
+    printf("Spaces = %d\n", s);
 
     return 0;
 }

@@ -1,3 +1,4 @@
+// Find the grade from marks using an else-if ladder
 #include <stdio.h>
 
 int main()
@@ -5,13 +6,11 @@ int main()
     int marks;
 
     printf("Enter marks (0-100): ");
-    if (scanf("%d", &marks) != 1 || marks < 0 || marks > 100)
-    {
-        printf("Please enter a number between 0 and 100.\n");
-        return 1;
-    }
+    scanf("%d", &marks);
 
-    if (marks >= 90)
+    if (marks < 0 || marks > 100)
+        printf("Invalid marks\n");
+    else if (marks >= 90)
         printf("Grade: A\n");
     else if (marks >= 75)
         printf("Grade: B\n");

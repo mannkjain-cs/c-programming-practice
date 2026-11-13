@@ -1,44 +1,33 @@
+// Sum, average, largest and smallest element of an array
 #include <stdio.h>
-
-#define MAX 100
 
 int main()
 {
-    int n, arr[MAX];
+    int a[100], n, i, sum = 0, max, min;
 
-    printf("How many numbers (1-%d)? ", MAX);
-    if (scanf("%d", &n) != 1 || n < 1 || n > MAX)
+    printf("Enter number of elements: ");
+    scanf("%d", &n);
+
+    printf("Enter %d elements: ", n);
+    for (i = 0; i < n; i++)
+        scanf("%d", &a[i]);
+
+    max = a[0];
+    min = a[0];
+
+    for (i = 0; i < n; i++)
     {
-        printf("Invalid size.\n");
-        return 1;
+        sum = sum + a[i];
+        if (a[i] > max)
+            max = a[i];
+        if (a[i] < min)
+            min = a[i];
     }
 
-    printf("Enter %d numbers: ", n);
-    for (int i = 0; i < n; i++)
-    {
-        if (scanf("%d", &arr[i]) != 1)
-        {
-            printf("Invalid input.\n");
-            return 1;
-        }
-    }
-
-    int min = arr[0], max = arr[0];
-    long long sum = 0;
-
-    for (int i = 0; i < n; i++)
-    {
-        sum += arr[i];
-        if (arr[i] < min)
-            min = arr[i];
-        if (arr[i] > max)
-            max = arr[i];
-    }
-
-    printf("Sum     = %lld\n", sum);
-    printf("Average = %.2f\n", (double)sum / n);
-    printf("Min     = %d\n", min);
-    printf("Max     = %d\n", max);
+    printf("Sum = %d\n", sum);
+    printf("Average = %.2f\n", (float)sum / n);
+    printf("Largest = %d\n", max);
+    printf("Smallest = %d\n", min);
 
     return 0;
 }

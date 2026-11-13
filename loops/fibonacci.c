@@ -1,21 +1,18 @@
+// Print the first n terms of the Fibonacci series
 #include <stdio.h>
 
 int main()
 {
-    int terms;
-    long long a = 0, b = 1;
+    int n, i, a = 0, b = 1, next;
 
-    printf("How many Fibonacci terms? ");
-    if (scanf("%d", &terms) != 1 || terms < 1 || terms > 90)
-    {
-        printf("Please enter a number between 1 and 90.\n");
-        return 1;
-    }
+    printf("Enter number of terms: ");
+    scanf("%d", &n);
 
-    for (int i = 0; i < terms; i++)
+    printf("Fibonacci series: ");
+    for (i = 1; i <= n; i++)
     {
-        printf("%lld ", a);
-        long long next = a + b;
+        printf("%d ", a);
+        next = a + b;
         a = b;
         b = next;
     }

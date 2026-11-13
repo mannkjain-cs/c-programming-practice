@@ -1,35 +1,36 @@
+// GCD and LCM of two numbers using functions
 #include <stdio.h>
 
-/* Euclid's algorithm */
+int gcd(int a, int b);
+int lcm(int a, int b);
+
+int main()
+{
+    int a, b;
+
+    printf("Enter two numbers: ");
+    scanf("%d %d", &a, &b);
+
+    printf("GCD = %d\n", gcd(a, b));
+    printf("LCM = %d\n", lcm(a, b));
+
+    return 0;
+}
+
 int gcd(int a, int b)
 {
+    int temp;
+
     while (b != 0)
     {
-        int temp = b;
+        temp = b;
         b = a % b;
         a = temp;
     }
     return a;
 }
 
-long long lcm(int a, int b)
+int lcm(int a, int b)
 {
-    return (long long)a / gcd(a, b) * b;
-}
-
-int main()
-{
-    int a, b;
-
-    printf("Enter two positive numbers: ");
-    if (scanf("%d %d", &a, &b) != 2 || a <= 0 || b <= 0)
-    {
-        printf("Please enter two positive numbers.\n");
-        return 1;
-    }
-
-    printf("GCD = %d\n", gcd(a, b));
-    printf("LCM = %lld\n", lcm(a, b));
-
-    return 0;
+    return (a * b) / gcd(a, b);
 }

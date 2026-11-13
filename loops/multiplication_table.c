@@ -1,20 +1,15 @@
+// Print the multiplication table of a number
 #include <stdio.h>
 
 int main()
 {
-    int n;
+    int n, i;
 
     printf("Enter a number: ");
-    if (scanf("%d", &n) != 1)
-    {
-        printf("Invalid input.\n");
-        return 1;
-    }
+    scanf("%d", &n);
 
-    for (int i = 1; i <= 10; i++)
-    {
-        printf("%d x %2d = %d\n", n, i, n * i);
-    }
+    for (i = 1; i <= 10; i++)
+        printf("%d x %d = %d\n", n, i, n * i);
 
     return 0;
 }

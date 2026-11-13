@@ -1,24 +1,27 @@
+// Factorial of a number using recursion
 #include <stdio.h>
 
-unsigned long long factorial(int n)
-{
-    if (n <= 1)
-        return 1;
-    return n * factorial(n - 1);
-}
+int fact(int n);
 
 int main()
 {
     int n;
 
-    printf("Enter a number (0-20): ");
-    if (scanf("%d", &n) != 1 || n < 0 || n > 20)
-    {
-        printf("Please enter a number between 0 and 20.\n");
-        return 1;
-    }
+    printf("Enter a number: ");
+    scanf("%d", &n);
 
-    printf("%d! = %llu\n", n, factorial(n));
+    if (n < 0)
+        printf("Factorial of a negative number does not exist\n");
+    else
+        printf("Factorial of %d = %d\n", n, fact(n));
 
     return 0;
+}
+
+int fact(int n)
+{
+    if (n == 0 || n == 1)       // base case
+        return 1;
+    else
+        return n * fact(n - 1); // recursive call
 }

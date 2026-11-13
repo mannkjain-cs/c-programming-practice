@@ -1,30 +1,29 @@
+// Check whether a number is prime
 #include <stdio.h>
 
 int main()
 {
-    int n, is_prime = 1;
+    int n, i, flag = 1;
 
     printf("Enter a number: ");
-    if (scanf("%d", &n) != 1)
-    {
-        printf("Invalid input.\n");
-        return 1;
-    }
+    scanf("%d", &n);
 
     if (n < 2)
-        is_prime = 0;
+        flag = 0;
 
-    /* Only need to check divisors up to the square root of n */
-    for (int i = 2; i * i <= n; i++)
+    for (i = 2; i <= n / 2; i++)
     {
         if (n % i == 0)
         {
-            is_prime = 0;
-            break;
+            flag = 0;
+            break;      // a divisor is found, no need to check further
         }
     }
 
-    printf("%d is %s.\n", n, is_prime ? "prime" : "not prime");
+    if (flag == 1)
+        printf("%d is a prime number\n", n);
+    else
+        printf("%d is not a prime number\n", n);
 
     return 0;
 }
