@@ -2,7 +2,7 @@
 
 #define MAX 100
 
-int main(void)
+int main()
 {
     int n, arr[MAX];
 

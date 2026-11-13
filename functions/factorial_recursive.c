@@ -7,7 +7,7 @@ unsigned long long factorial(int n)
     return n * factorial(n - 1);
 }
 
-int main(void)
+int main()
 {
     int n;
 

@@ -17,7 +17,7 @@ long long lcm(int a, int b)
     return (long long)a / gcd(a, b) * b;
 }
 
-int main(void)
+int main()
 {
     int a, b;
 

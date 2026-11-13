@@ -19,7 +19,7 @@ int binary_search(const int arr[], int n, int target)
     return -1;
 }
 
-int main(void)
+int main()
 {
     int arr[] = {2, 5, 8, 12, 16, 23, 38, 56, 72, 91};
     int n = sizeof(arr) / sizeof(arr[0]);

@@ -10,7 +10,7 @@ struct Student
     float marks;
 };
 
-int main(void)
+int main()
 {
     struct Student students[MAX_STUDENTS];
     int n;

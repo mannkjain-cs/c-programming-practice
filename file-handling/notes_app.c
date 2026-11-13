@@ -46,7 +46,7 @@ void show_notes(void)
     fclose(fp);
 }
 
-int main(void)
+int main()
 {
     int choice;
 

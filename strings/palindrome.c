@@ -24,7 +24,7 @@ int is_palindrome(const char *s)
     return 1;
 }
 
-int main(void)
+int main()
 {
     char text[200];
 
