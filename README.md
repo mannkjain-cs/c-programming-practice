@@ -40,7 +40,6 @@ madam is a palindrome
 
 - Linked lists, stacks and queues in C
 - Data structures & algorithms practice
-- Python for data analysis
 
 ## Author
 
