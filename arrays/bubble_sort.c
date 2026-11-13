@@ -1,5 +1,7 @@
 #include <stdio.h>
 
+#define MAX 100
+
 void bubble_sort(int arr[], int n)
 {
     for (int i = 0; i < n - 1; i++)
@@ -29,8 +31,24 @@ void print_array(const int arr[], int n)
 
 int main()
 {
-    int arr[] = {64, 34, 25, 12, 22, 11, 90};
-    int n = sizeof(arr) / sizeof(arr[0]);
+    int n, arr[MAX];
+
+    printf("How many numbers (1-%d)? ", MAX);
+    if (scanf("%d", &n) != 1 || n < 1 || n > MAX)
+    {
+        printf("Invalid size.\n");
+        return 1;
+    }
+
+    printf("Enter %d numbers: ", n);
+    for (int i = 0; i < n; i++)
+    {
+        if (scanf("%d", &arr[i]) != 1)
+        {
+            printf("Invalid input.\n");
+            return 1;
+        }
+    }
 
     printf("Before: ");
     print_array(arr, n);

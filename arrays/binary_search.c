@@ -1,5 +1,7 @@
 #include <stdio.h>
 
+#define MAX 100
+
 /* Returns the index of target in a sorted array, or -1 if not found */
 int binary_search(const int arr[], int n, int target)
 {
@@ -21,14 +23,32 @@ int binary_search(const int arr[], int n, int target)
 
 int main()
 {
-    int arr[] = {2, 5, 8, 12, 16, 23, 38, 56, 72, 91};
-    int n = sizeof(arr) / sizeof(arr[0]);
-    int target;
+    int n, arr[MAX], target;
 
-    printf("Array: ");
+    printf("How many numbers (1-%d)? ", MAX);
+    if (scanf("%d", &n) != 1 || n < 1 || n > MAX)
+    {
+        printf("Invalid size.\n");
+        return 1;
+    }
+
+    printf("Enter %d numbers in ascending order: ", n);
     for (int i = 0; i < n; i++)
-        printf("%d ", arr[i]);
-    printf("\nEnter a number to search: ");
+    {
+        if (scanf("%d", &arr[i]) != 1)
+        {
+            printf("Invalid input.\n");
+            return 1;
+        }
+        /* Binary search only works on a sorted array */
+        if (i > 0 && arr[i] < arr[i - 1])
+        {
+            printf("Numbers must be in ascending order.\n");
+            return 1;
+        }
+    }
+
+    printf("Enter a number to search: ");
 
     if (scanf("%d", &target) != 1)
     {
