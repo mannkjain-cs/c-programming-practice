@@ -1,0 +1,12 @@
+# Compiled programs
+*.out
+*.exe
+*.o
+a.out
+
+# Files created by the programs
+notes.txt
+
+# Editor / OS files
+.vscode/
+.DS_Store
